@@ -7,7 +7,6 @@ function increaseScore(){
     document.querySelector("#score").innerText = score;
 }
 
-
 function getNewHit(){
      hitNum = Math.floor(Math.random()*10);
     document.querySelector("#hit").innerText = hitNum;
@@ -22,7 +21,7 @@ function runTimer(){
         }
         else{
             clearInterval(timerInt);
-            document.querySelector("#pbot").innerHTML = `<h1>Game Over</h1>`;
+            gameOver();
         }
     }, 1000);
 }
@@ -38,11 +37,30 @@ function createBubbles(){
     document.querySelector("#pbot").innerHTML = clutter;
 }
 
+function gameOver(){
+    document.querySelector("#pbot").innerHTML = `<h1>Game Over</h1>`;
+    document.querySelector("#new-game").classList.add("new-btn");
+    document.querySelector("#start-game").classList.add("hide");
+    document.querySelector("#new-game").addEventListener("click", () =>{
+        document.querySelector("#new-game").classList.remove("new-btn");
+        document.querySelector("#start-game").classList.remove("hide");
+        newGame();
+    })
+}
+
+function newGame(){
+    timer = 60;
+    score = 0;
+    getNewHit();
+    createBubbles();
+    document.querySelector("#score").innerText = score;
+    document.querySelector("#timer").innerText = timer;
+}
+
 function startGame(){
-    
+    runTimer();
     document.querySelector("#pbot")
         .addEventListener("click", (dets) =>{
-            runTimer();
             if(Number(dets.target.textContent)===hitNum){
                 increaseScore();
                 getNewHit();
@@ -51,13 +69,13 @@ function startGame(){
         })
 }
 
-
-
 getNewHit();
 createBubbles();
 
 document.querySelector("#score").innerText = score;
 document.querySelector("#timer").innerText = timer;
-startGame();
+document.querySelector("#start-game").addEventListener("click", () =>{
+    startGame();
+})
 
 

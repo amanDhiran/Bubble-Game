@@ -85,6 +85,54 @@ body{
 .bubble:hover{
     cursor: pointer;
     background-color: #625753;
+    color: #ccb08e;
 }
 
+.start-btn{
+    margin-left: 10px;
+    height: 40px;
+    padding: 5px 15px;
+    background-color: #F1DABF;
+    border: none;
+    box-shadow: 2px 2px 3px #745735;
+    border-radius: 5px;
+    color: #92817A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.start-btn:hover{
+    cursor: pointer;
+    background-color: #ccb08e ;
+    color: #ffdebb;
+}
+
+.hide{
+    display: none;
+}
+
+.new-btn{
+    margin-left: 10px;
+    height: 40px;
+    padding: 5px 15px;
+    background-color: #F1DABF;
+    border: none;
+    box-shadow: 2px 2px 3px #745735;
+    border-radius: 5px;
+    color: #92817A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.new-btn:hover{
+    cursor: pointer;
+    background-color: #ccb08e ;
+    color: #ffdebb;
+}
 
