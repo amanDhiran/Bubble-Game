@@ -75,6 +75,7 @@ createBubbles();
 document.querySelector("#score").innerText = score;
 document.querySelector("#timer").innerText = timer;
 document.querySelector("#start-game").addEventListener("click", () =>{
+    document.querySelector("#start-game").classList.add("hide");
     startGame();
 })
 
